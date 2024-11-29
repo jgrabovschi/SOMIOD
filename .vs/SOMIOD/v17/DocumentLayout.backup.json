@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\iorgu\\documents\\school\\is\\somiod\\somiod\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\iorgu\\documents\\school\\is\\somiod\\somiod\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\iorgu\\documents\\school\\is\\somiod\\somiod\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\iorgu\\documents\\school\\is\\somiod\\somiod\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Global.asax.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Global.asax.cs",
+              "RelativeToolTip": "SOMIOD\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T17:47:51.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Application.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Models\\Application.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\Models\\Application.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Models\\Application.cs",
+              "RelativeToolTip": "SOMIOD\\Models\\Application.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:14:11.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationController.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Controllers\\ApplicationController.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\Controllers\\ApplicationController.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Controllers\\ApplicationController.cs",
+              "RelativeToolTip": "SOMIOD\\Controllers\\ApplicationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:10:08.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "SOMIOD\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:06:46.477Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
