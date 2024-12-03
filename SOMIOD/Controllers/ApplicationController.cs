@@ -13,7 +13,7 @@ namespace SOMIOD.Controllers
     public class ApplicationController : ApiController
     {
         const string databaseURL = "mongodb://mongodb.cloud-ss.pt:27017";
-        // GET: api/Application
+        // GET http://<domain:port>/api/somiod/
         public IHttpActionResult Get()
         {
             var client = new MongoClient(databaseURL);
@@ -26,13 +26,13 @@ namespace SOMIOD.Controllers
             return Ok(applications);
         }
 
-        // GET: api/Application/5
+        // GET: api/somioid/Application/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Application
+        // POST: api/somioid/
         public IHttpActionResult Post([FromBody]Application application)
         {
             var client = new MongoClient(databaseURL);
@@ -50,12 +50,12 @@ namespace SOMIOD.Controllers
             return Ok();
         }
 
-        // PUT: api/Application/5
+        // PUT: api/somiod/Application/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Application/5
+        // DELETE: api/somiod/Application/5
         public void Delete(int id)
         {
         }
