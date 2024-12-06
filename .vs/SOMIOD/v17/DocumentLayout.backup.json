@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Guilherme\\Documents\\GUILHERMED\\4ANO\\1SEM\\IS\\PROJETO\\SOMIOD\\",
   "Documents": [
     {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\somiod\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\iorgu\\documents\\school\\is\\somiod\\somiod\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\somiod\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\somiod\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
       "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\guilherme\\documents\\guilhermed\\4ano\\1sem\\is\\projeto\\somiod\\somiod\\controllers\\containercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\controllers\\containercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,6 +29,7 @@
     {
       "AbsoluteMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|c:\\users\\guilherme\\documents\\guilhermed\\4ano\\1sem\\is\\projeto\\somiod\\somiod\\models\\container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4888B04-89BD-430B-9DEA-04964A830F0A}|SOMIOD\\SOMIOD.csproj|solutionrelative:somiod\\models\\container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 8f874b6f8af22184ebc68bdf8f62b351e0b2e1e8
     }
   ],
   "DocumentGroupContainers": [
@@ -22,6 +39,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Global.asax.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Global.asax.cs",
+              "RelativeToolTip": "SOMIOD\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+=======
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -33,18 +63,41 @@
               "ToolTip": "C:\\Users\\Guilherme\\Documents\\GUILHERMED\\4ANO\\1SEM\\IS\\PROJETO\\SOMIOD\\SOMIOD\\Models\\Container.cs",
               "RelativeToolTip": "SOMIOD\\Models\\Container.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+>>>>>>> 8f874b6f8af22184ebc68bdf8f62b351e0b2e1e8
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T17:29:05.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 3,
+              "Title": "Application.cs",
+              "DocumentMoniker": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Models\\Application.cs",
+              "RelativeDocumentMoniker": "SOMIOD\\Models\\Application.cs",
+              "ToolTip": "C:\\Users\\iorgu\\Documents\\School\\IS\\SOMIOD\\SOMIOD\\Models\\Application.cs",
+              "RelativeToolTip": "SOMIOD\\Models\\Application.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:14:11.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+=======
               "DocumentIndex": 1,
+>>>>>>> 8f874b6f8af22184ebc68bdf8f62b351e0b2e1e8
               "Title": "ApplicationController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GUILHERMED\\4ANO\\1SEM\\IS\\PROJETO\\SOMIOD\\SOMIOD\\Controllers\\ApplicationController.cs",
               "RelativeDocumentMoniker": "SOMIOD\\Controllers\\ApplicationController.cs",
               "ToolTip": "C:\\Users\\Guilherme\\Documents\\GUILHERMED\\4ANO\\1SEM\\IS\\PROJETO\\SOMIOD\\SOMIOD\\Controllers\\ApplicationController.cs",
               "RelativeToolTip": "SOMIOD\\Controllers\\ApplicationController.cs",
+<<<<<<< HEAD
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:10:08.283Z",
+              "EditorCaption": ""
+=======
               "ViewState": "AgIAACEAAAAAAAAAAAAYwC4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-29T16:10:08.283Z",
@@ -57,6 +110,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> 8f874b6f8af22184ebc68bdf8f62b351e0b2e1e8
             },
             {
               "$type": "Document",
