@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using MongoDB.Driver;
+using System.Web.Routing;
+using MySql.Data.MySqlClient;
 using SOMIOD.Models;
 
 
@@ -12,97 +15,227 @@ namespace SOMIOD.Controllers
 {
     public class ApplicationController : ApiController
     {
-        const string databaseURL = "mongodb://mongodb.cloud-ss.pt:27017";
+       
+        // Retrieve the connection string from the configuration file
+        string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
-
-        private MongoClient Authenticate()
+        private bool checkUniqueName(string name, MySqlConnection conn)
         {
-            MongoCredential credential = MongoCredential.CreateCredential("admin", "somiod_user", ",$0m1O3");
-            MongoClientSettings settings = MongoClientSettings.FromConnectionString(databaseURL);
+            List<string> tableNames = new List<string> { "Applications", "Containers", "Records", "Notifications" };
 
-            settings.Credential = credential;
-
-            MongoClient mongoClient = null;
-
-            try
+            foreach (string tableName in tableNames)
             {
-                mongoClient = new MongoClient(settings);
+                // Table name can't be parameterized, so it's directly interpolated safely.
+                string query = $"SELECT name FROM `{tableName}` WHERE name = @Name";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return false; // Name exists in the current table
+                        }
+                    }
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
-
-            return mongoClient;
-
+            return true; // Name is unique across all tables
         }
 
 
-        // GET: api/Application
+        [Route("api/somiod")]
         public IHttpActionResult Get()
         {
-            var mongoClient = Authenticate();
-            if (mongoClient == null)
+            List<Application> applications = new List<Application>();
+
+
+            // create a connection to the mysql database
+            try
             {
-                // Assuming the password was right, the only reason for this to fail is if the connection to the database fails
-                return StatusCode(HttpStatusCode.InternalServerError);
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Applications", conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var application = new Application
+                                {
+                                    Id = Int32.Parse(reader["id"].ToString()),
+                                    Name = reader["name"].ToString(),
+                                    CreationDateTime = DateTime.TryParse(reader["creation_datetime"].ToString(), out DateTime parsedDate)
+                                        ? parsedDate
+                                        : DateTime.MinValue
+                                };
+
+                                applications.Add(application);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
             }
 
-            Console.Write("connected");
-            var database = mongoClient.GetDatabase("somiod");
-            var collection = database.GetCollection<Application>("applications");
-            var applications = collection.Find(_ => true).ToList();
 
 
             return Ok(applications);
         }
 
-        // GET: api/somioid/Application/5
-        public string Get(int id)
+        // GET: api/somioid/name
+        [Route("api/somiod/{name}")]
+        public IHttpActionResult Get(String name)
         {
-            return "value";
+            if (name == null)
+            {
+                return BadRequest();
+            }
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand("SELECT * FROM Applications WHERE name = @Name", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    try
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                var application = new Application
+                                {
+                                    Id = Int32.Parse(reader["id"].ToString()),
+                                    Name = reader["name"].ToString(),
+                                    CreationDateTime = DateTime.TryParse(reader["creation_datetime"].ToString(), out DateTime parsedDate)
+                                        ? parsedDate
+                                        : DateTime.MinValue
+                                };
+                                return Ok(application);
+                            }
+                            return NotFound();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return InternalServerError();
+                    }
+                   
+                }
+            }
         }
 
-        // POST: api/somioid/
+        // POST: api/somiod/
+        [Route("api/somiod")]
         public IHttpActionResult Post([FromBody]Application application)
         {
-            var mongoClient = Authenticate();
-            if (mongoClient == null)
+            if (application == null)
             {
-                // Assuming the password was right, the only reason for this to fail is if the connection to the database fails
-                return StatusCode(HttpStatusCode.InternalServerError);
+                return BadRequest();
             }
-            Console.Write("connected");
-            var database = mongoClient.GetDatabase("somiod");
-            var collection = database.GetCollection<Application>("applications");
-            var applicationToInsert = new Application
-            {
-                id = application.id,
-                name = application.name,
-                creation_datetime = DateTime.Now
-            };
 
-            try
-            {
-                collection.InsertOne(applicationToInsert);
-            }
-            catch (Exception)
-            {
-                return StatusCode(HttpStatusCode.BadRequest);
-            }
+            // create a connection to the mysql database
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                    }
+                    catch (Exception)
+                    {
+                        return InternalServerError();
+                    }
+
+                    // check if the name is unique
+                    if (!checkUniqueName(application.Name, conn))
+                    {
+                        return BadRequest();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Applications (name, creation_datetime) VALUES (@Name, @CreationDateTime)", conn))
+                    {
+                        try
+                        {
+                            cmd.Parameters.AddWithValue("@Name", application.Name);
+                            cmd.Parameters.AddWithValue("@CreationDateTime", DateTime.Now);
+                        }
+                        catch (Exception)
+                        {
+                            return BadRequest();
+                        }
+
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception)
+                        {
+                            return InternalServerError();
+                        }
+                    }
+                }
 
             return Ok();
         }
 
         // PUT: api/somiod/Application/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/somiod/{name}")]
+        public IHttpActionResult Put(string name, [FromBody]Application application)
         {
+            if (application == null)
+            {
+                return BadRequest();
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                if (!checkUniqueName(application.Name, conn))
+                {
+                    return BadRequest();
+                }
+                using (MySqlCommand cmd = new MySqlCommand("UPDATE Applications SET name = @NameNew WHERE name = @NameOld", conn))
+                {
+                    cmd.Parameters.AddWithValue("@NameOld", name);
+                    cmd.Parameters.AddWithValue("@NameNew", application.Name);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        return InternalServerError();
+                    }
+                    return Ok();
+                }
+            }
         }
 
-        // DELETE: api/somiod/Application/5
-        public void Delete(int id)
+
+        [Route("api/somiod/{name}")]
+        public IHttpActionResult Delete(string name)
         {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM Applications WHERE name = @Name", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        return InternalServerError();
+                    }
+                    return Ok();
+                }
+            }
         }
     }
 }
