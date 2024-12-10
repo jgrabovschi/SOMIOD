@@ -46,7 +46,7 @@ namespace SOMIOD.Controllers
 
 
         [Route("api/somiod")]
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(HttpRequestMessage requestHeader)
         {
             List<Application> applications = new List<Application>();
 
@@ -57,22 +57,43 @@ namespace SOMIOD.Controllers
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Applications", conn))
+                    if (requestHeader.Headers.Contains("somiod-locate")
+                        && requestHeader.Headers.GetValues("somiod-locate").Contains("application"))
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        var names = new List<String>();
+                        using (MySqlCommand cmd = new MySqlCommand("Select name from Applications", conn))
                         {
-                            while (reader.Read())
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
-                                var application = new Application
-                                {
-                                    Id = Int32.Parse(reader["id"].ToString()),
-                                    Name = reader["name"].ToString(),
-                                    CreationDateTime = DateTime.TryParse(reader["creation_datetime"].ToString(), out DateTime parsedDate)
-                                        ? parsedDate
-                                        : DateTime.MinValue
-                                };
 
-                                applications.Add(application);
+                                while (reader.Read())
+                                {
+                                    names.Add(reader["name"].ToString());
+                                }
+                            }
+                            return Ok(names);
+
+                        }
+                    }
+                    else
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Applications", conn))
+                        {
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                        var application = new Application
+                                    {
+                                        Id = Int32.Parse(reader["id"].ToString()),
+                                        Name = reader["name"].ToString(),
+                                        CreationDateTime = DateTime.TryParse(reader["creation_datetime"].ToString(), out DateTime parsedDate)
+                                            ? parsedDate
+                                            : DateTime.MinValue
+                                    };
+
+                                    applications.Add(application);
+                                }
                             }
                         }
                     }
