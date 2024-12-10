@@ -195,8 +195,11 @@ C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\obj\D
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\obj\Debug\SOMIOD.csproj.CoreCompileInputs.cache
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\obj\Debug\SOMIOD.csproj.Up2Date
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\obj\Debug\SOMIOD.pdb
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> main
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\BouncyCastle.Cryptography.dll
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\Google.Protobuf.dll
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\K4os.Compression.LZ4.dll
@@ -216,6 +219,7 @@ C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\MySql.Data.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Configuration.ConfigurationManager.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.IO.Pipelines.xml
+<<<<<<< HEAD
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\BouncyCastle.Cryptography.dll
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\Google.Protobuf.dll
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\K4os.Compression.LZ4.dll
@@ -236,3 +240,5 @@ C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\S
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Guilherme\Documents\GUILHERMED\4ANO\1SEM\IS\PROJETO\SOMIOD\SOMIOD\bin\System.IO.Pipelines.xml
 >>>>>>> Stashed changes
+=======
+>>>>>>> main
