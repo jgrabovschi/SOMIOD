@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml.Serialization;
 
 namespace SOMIOD.Models
 {
-    public class Notification
+    [XmlRoot("Notification")]
+    public class Notification : EntityWithParent
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public DateTime creation_datetime { get; set; }
-        public int parent { get; set; }
         public int @event { get; set; }
         public string endpoint { get; set; }    
         public bool enabled { get; set; }   
-
     }
 }
