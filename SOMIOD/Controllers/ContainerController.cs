@@ -10,15 +10,15 @@ using SOMIOD.Models;
 
 namespace SOMIOD.Controllers
 {
-    [RoutePrefix("api/somiod")]
+    
     public class ContainerController : ApiController
     {
         const string databaseURL = "mongodb://mongodb.cloud-ss.pt:27017";
 
         //GET -h "somiod-locate: XXXX" api/somioid/Application/
         [HttpGet]
-        [Route("{app}/")]
-        public IHttpActionResult get(string app)
+        [Route("api/somiod/{app}/{container}")]
+        public IHttpActionResult get(string app, string container)
         {
             try
             {
@@ -40,12 +40,6 @@ namespace SOMIOD.Controllers
             
         }
 
-
-        // GET: api/somioid/Application/Container/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST: api/somioid/Application/
         public IHttpActionResult Post([FromBody] Container container)

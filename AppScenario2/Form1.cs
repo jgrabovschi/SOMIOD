@@ -152,7 +152,7 @@ namespace AppScenario2
             }
 
             // Create the REST request
-            var request = new RestRequest("api/SOMIOD/{name}/containers", Method.Get);
+            var request = new RestRequest("api/SOMIOD/{name}/", Method.Get);
             request.AddUrlSegment("name", textBox2.Text);
             request.AddHeader("Accept", "application/xml");
             request.AddHeader("somiod-locate", "true"); // Custom header for locating containers

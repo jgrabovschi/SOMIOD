@@ -75,6 +75,21 @@ namespace SOMIOD.Controllers
 
                         }
                     }
+                    else if(requestHeader.Headers.Contains("somiod-locate")
+                        && requestHeader.Headers.GetValues("somiod-locate").Contains("containers"))
+                    {
+                        var names = new List<String>();
+                        using (MySqlCommand cmd = new MySqlCommand("Select name from Containers",conn))
+                        {
+                            using(MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    names.Add(reader["name"].ToString());
+                                }
+                            }
+                        }
+                    }
                     else
                     {
                         using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Applications", conn))
