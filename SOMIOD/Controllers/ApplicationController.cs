@@ -45,6 +45,8 @@ namespace SOMIOD.Controllers
         }
 
 
+        //Fazer aqui rota dinamica dependendo do que queremos ver ou seja
+        //ao fazer o somiod-locate ele ira retornar a lista de nomes do todos os objecto que queremos ver
         [Route("api/somiod")]
         public IHttpActionResult Get(HttpRequestMessage requestHeader)
         {
@@ -123,6 +125,8 @@ namespace SOMIOD.Controllers
 
             return Ok(applications);
         }
+
+        //Aqui irá retornar as propriedades dos obejctos dentro da applicação
 
         // GET: api/somioid/name
         [Route("api/somiod/{name}")]

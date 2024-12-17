@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using MongoDB.Driver;
+using MySql.Data.MySqlClient;
 using SOMIOD.Models;
 
 
@@ -22,18 +23,37 @@ namespace SOMIOD.Controllers
         {
             try
             {
+                // Connect to MongoDB
                 var client = new MongoClient(databaseURL);
-                Console.Write("connected");
-
                 var database = client.GetDatabase("somiod");
-                var collection = database.GetCollection<Container>("containers");
 
-                var containers = collection.Find(_ => true).ToList();
+                // Step 1: Query the Applications Collection to Get the Application ID
+                var applicationsCollection = database.GetCollection<Application>("applications");
+                var appFilter = Builders<Application>.Filter.Eq(a => a.Name, app);
+                var application = applicationsCollection.Find(appFilter).FirstOrDefault();
 
+                if (application == null)
+                {
+                    return NotFound(); // Application not found
+                }
 
-                return Ok(containers);
+                // Step 2: Query the Containers Collection Using the Retrieved Application ID
+                var containersCollection = database.GetCollection<Container>("containers");
+                var containerFilter = Builders<Container>.Filter.Eq(c => c.parent, application.Id) &
+                                      Builders<Container>.Filter.Eq(c => c.name, container);
+
+                var result = containersCollection.Find(containerFilter).FirstOrDefault();
+
+                if (result == null)
+                {
+                    return NotFound(); // Container not found
+                }
+
+                // Return the matching container
+                return Ok(result);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return InternalServerError(ex);
             }
