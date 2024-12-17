@@ -9,23 +9,35 @@ using SOMIOD.Models;
 
 
 namespace SOMIOD.Controllers
-{ 
-
+{
+    [RoutePrefix("api/somiod")]
     public class ContainerController : ApiController
     {
         const string databaseURL = "mongodb://mongodb.cloud-ss.pt:27017";
 
         //GET -h "somiod-locate: XXXX" api/somioid/Application/
-        public IHttpActionResult get()
+        [HttpGet]
+        [Route("{app}/")]
+        public IHttpActionResult get(string app)
         {
-            var client = new MongoClient(databaseURL);            
-            Console.Write("connected");
-            var database = client.GetDatabase("somiod");
-            var collection = database.GetCollection<Container>("containers");
-            var containers = collection.Find(_ => true).ToList();
+            try
+            {
+                var client = new MongoClient(databaseURL);
+                Console.Write("connected");
+
+                var database = client.GetDatabase("somiod");
+                var collection = database.GetCollection<Container>("containers");
+
+                var containers = collection.Find(_ => true).ToList();
 
 
-            return Ok(containers);
+                return Ok(containers);
+            }
+            catch(Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+            
         }
 
 
