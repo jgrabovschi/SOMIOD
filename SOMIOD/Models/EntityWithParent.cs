@@ -7,6 +7,6 @@ namespace SOMIOD.Models
 {
     public abstract class EntityWithParent : Entity
     {
-        public int Parent { get; set; }
+        public int parent { get; set; }
     }
 }

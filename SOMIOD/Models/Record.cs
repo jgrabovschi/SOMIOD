@@ -7,9 +7,8 @@ using System.Xml.Serialization;
 namespace SOMIOD.Models
 {
     [XmlRoot("Record")]
-    public class Record
+    public class Record : EntityWithParent
     {
         public string content { get; set; }
-        public DateTime creation_datetime { get; set; }
     }
 }

@@ -12,11 +12,11 @@ namespace SOMIOD.Models
     public abstract class Entity
     {
 
-        public int Id { get; set; } 
+        public int id { get; set; } 
 
  
-        public string Name { get; set; }
+        public string name { get; set; }
 
-        public DateTime CreationDateTime { get; set; }
+        public DateTime creation_datetime { get; set; }
     }
 }

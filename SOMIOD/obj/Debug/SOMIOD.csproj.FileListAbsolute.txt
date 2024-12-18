@@ -232,3 +232,13 @@ C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Web.Http.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Web.Http.WebHost.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\obj\Debug\SOMIOD.csproj.Up2Date
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\M2Mqtt.Net.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\RestSharp.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Encodings.Web.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Json.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.ValueTuple.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\M2Mqtt.Net.pdb
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\RestSharp.xml
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Encodings.Web.xml
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Json.xml
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.ValueTuple.xml
