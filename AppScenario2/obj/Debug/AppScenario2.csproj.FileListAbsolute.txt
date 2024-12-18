@@ -60,3 +60,5 @@ C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\obj\Debug\AppScenario2.cs
 C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\obj\Debug\AppScena.00857AEC.Up2Date
 C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\obj\Debug\AppScenario2.exe
 C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\obj\Debug\AppScenario2.pdb
+C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\bin\Debug\M2Mqtt.Net.dll
+C:\Users\iorgu\Documents\School\IS\SOMIOD\AppScenario2\bin\Debug\M2Mqtt.Net.pdb

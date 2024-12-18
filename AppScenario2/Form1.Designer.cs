@@ -53,10 +53,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.deletePath = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.subscribeButton = new System.Windows.Forms.Button();
+            this.urlText = new System.Windows.Forms.TextBox();
+            this.topicText = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.unsubButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +74,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -325,6 +335,84 @@
             this.deletePath.Size = new System.Drawing.Size(294, 20);
             this.deletePath.TabIndex = 3;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.unsubButton);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.topicText);
+            this.tabPage5.Controls.Add(this.urlText);
+            this.tabPage5.Controls.Add(this.subscribeButton);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(650, 340);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "MQTT Broker";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "URL:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Topic:";
+            // 
+            // subscribeButton
+            // 
+            this.subscribeButton.Location = new System.Drawing.Point(172, 3);
+            this.subscribeButton.Name = "subscribeButton";
+            this.subscribeButton.Size = new System.Drawing.Size(75, 23);
+            this.subscribeButton.TabIndex = 2;
+            this.subscribeButton.Text = "Subscribe";
+            this.subscribeButton.UseVisualStyleBackColor = true;
+            this.subscribeButton.Click += new System.EventHandler(this.subscribeButton_Click);
+            // 
+            // urlText
+            // 
+            this.urlText.Location = new System.Drawing.Point(47, 1);
+            this.urlText.Name = "urlText";
+            this.urlText.Size = new System.Drawing.Size(119, 20);
+            this.urlText.TabIndex = 3;
+            this.urlText.Text = "test.mosquitto.org";
+            // 
+            // topicText
+            // 
+            this.topicText.Location = new System.Drawing.Point(47, 27);
+            this.topicText.Name = "topicText";
+            this.topicText.Size = new System.Drawing.Size(119, 20);
+            this.topicText.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(262, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Messages will pop when a new notification is received";
+            // 
+            // unsubButton
+            // 
+            this.unsubButton.Location = new System.Drawing.Point(172, 30);
+            this.unsubButton.Name = "unsubButton";
+            this.unsubButton.Size = new System.Drawing.Size(75, 23);
+            this.unsubButton.TabIndex = 6;
+            this.unsubButton.Text = "Unsubscribe";
+            this.unsubButton.UseVisualStyleBackColor = true;
+            this.unsubButton.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +429,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,6 +462,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox deletePath;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox urlText;
+        private System.Windows.Forms.Button subscribeButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox topicText;
+        private System.Windows.Forms.Button unsubButton;
+        private System.Windows.Forms.Label label9;
     }
 }
 
