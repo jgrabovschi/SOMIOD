@@ -220,10 +220,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\SOMIOD.dll" />
+    <Content Include="bin\SOMIOD.pdb" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="obj\Debug\SOMIOD.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SOMIOD.dll" />
+    <Content Include="obj\Debug\SOMIOD.pdb" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SomiodController.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,10 +243,21 @@
     <Compile Include="Models\EntityWithParent.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Record.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\SOMIOD.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\SOMIOD.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\SOMIOD.csproj.Up2Date" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -248,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

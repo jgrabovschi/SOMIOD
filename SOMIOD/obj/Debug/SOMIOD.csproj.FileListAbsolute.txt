@@ -119,7 +119,6 @@ C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\obj\Debug\SOMIOD.csproj.Assembl
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\obj\Debug\SOMIOD.csproj.CoreCompileInputs.cache
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\obj\Debug\SOMIOD.pdb
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\SOMIOD.dll.config
-C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\SOMIOD.dll
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\SOMIOD.pdb
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\roslyn\csc.exe
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\roslyn\csc.exe.config
@@ -242,3 +241,4 @@ C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\RestSharp.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Encodings.Web.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.Text.Json.xml
 C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\bin\System.ValueTuple.xml
+C:\Users\iorgu\Documents\School\IS\SOMIOD\SOMIOD\obj\Debug\SOMIOD.dll
