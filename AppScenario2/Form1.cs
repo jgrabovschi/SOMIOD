@@ -18,7 +18,7 @@ namespace AppScenario2
     public partial class Form1 : Form
     {
 
-        string baseURI = @"http://localhost:5676/";
+        string baseURI = @"http://localhost:5676";
 
 
         RestClient client = null;
@@ -38,7 +38,7 @@ namespace AppScenario2
         {
             List<Application> list = new List<Application>();
 
-            var request = new RestRequest("api/SOMIOD/",Method.Get);
+            var request = new RestRequest("/api/SOMIOD/",Method.Get);
             request.RequestFormat = DataFormat.Xml;
             request.AddHeader("Accept", "application/xml");
 
@@ -95,7 +95,7 @@ namespace AppScenario2
             }
 
             // Create the REST request
-            var request = new RestRequest("api/SOMIOD/{name}", Method.Get);
+            var request = new RestRequest("/api/SOMIOD/{name}", Method.Get);
             request.AddUrlSegment("name", textBox2.Text);
             request.AddHeader("Accept", "application/xml");
 
@@ -152,7 +152,7 @@ namespace AppScenario2
             }
 
             // Create the REST request
-            var request = new RestRequest("api/SOMIOD/{name}/", Method.Get);
+            var request = new RestRequest("/api/SOMIOD/{name}/", Method.Get);
             request.AddUrlSegment("name", textBox2.Text);
             request.AddHeader("Accept", "application/xml");
             request.AddHeader("somiod-locate", "true"); // Custom header for locating containers
@@ -194,6 +194,44 @@ namespace AppScenario2
                 else
                 {
                     richTextBox1.AppendText("No data retrieved or an error occurred.\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(deletePath.Text))
+            {
+                MessageBox.Show("Path cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var request = new RestRequest(deletePath.Text, Method.Delete);
+
+            try
+            {
+                var response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Resource deleted successfully.\n");
+                }
+                else
+                {
+                    MessageBox.Show("Resource not found or an error occurred.\n");
                 }
             }
             catch (Exception ex)
