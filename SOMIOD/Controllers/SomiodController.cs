@@ -97,7 +97,7 @@ namespace SOMIOD.Controllers
         {
             List<String> endpoints = new List<String>();
 
-            using (var cmd = new MySqlCommand("SELECT endpoint FROM Notifications WHERE event = @ev OR event = 2 AND parent = @parent AND enabled = 1", conn))
+            using (var cmd = new MySqlCommand("SELECT endpoint FROM Notifications WHERE event IN (@ev, 2) AND parent = @parent AND enabled = 1", conn))
             {
                 cmd.Parameters.AddWithValue("@ev", ev);
                 cmd.Parameters.AddWithValue("@parent", cont_id);

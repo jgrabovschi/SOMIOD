@@ -38,16 +38,32 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.evPost = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.endPost = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.contPost = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.notifRadio = new System.Windows.Forms.RadioButton();
+            this.recRadio = new System.Windows.Forms.RadioButton();
+            this.contRadio = new System.Windows.Forms.RadioButton();
+            this.appRadio = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.namePost = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.urlPost = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.namePut = new System.Windows.Forms.TextBox();
+            this.contButton = new System.Windows.Forms.RadioButton();
+            this.appButton = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.urlPut = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.deletePath = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -61,13 +77,7 @@
             this.subscribeButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.urlPut = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.appButton = new System.Windows.Forms.RadioButton();
-            this.contButton = new System.Windows.Forms.RadioButton();
-            this.namePut = new System.Windows.Forms.TextBox();
+            this.enaPost = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -168,7 +178,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(440, 180);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button1
             // 
@@ -183,15 +192,24 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.enaPost);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.evPost);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.endPost);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.contPost);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.notifRadio);
+            this.tabPage2.Controls.Add(this.recRadio);
+            this.tabPage2.Controls.Add(this.contRadio);
+            this.tabPage2.Controls.Add(this.appRadio);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.namePost);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.urlPost);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
@@ -201,62 +219,144 @@
             this.tabPage2.Text = "POST";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // label16
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 238);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(126, 171);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 13);
+            this.label16.TabIndex = 17;
+            this.label16.Text = "Enabled:";
             // 
-            // textBox5
+            // evPost
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 187);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(96, 20);
-            this.textBox5.TabIndex = 7;
+            this.evPost.Location = new System.Drawing.Point(184, 144);
+            this.evPost.Margin = new System.Windows.Forms.Padding(2);
+            this.evPost.Name = "evPost";
+            this.evPost.Size = new System.Drawing.Size(96, 20);
+            this.evPost.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(126, 147);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Event";
+            // 
+            // endPost
+            // 
+            this.endPost.Location = new System.Drawing.Point(184, 120);
+            this.endPost.Margin = new System.Windows.Forms.Padding(2);
+            this.endPost.Name = "endPost";
+            this.endPost.Size = new System.Drawing.Size(96, 20);
+            this.endPost.TabIndex = 14;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(126, 123);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "Endpoint:";
+            // 
+            // contPost
+            // 
+            this.contPost.Location = new System.Drawing.Point(184, 96);
+            this.contPost.Margin = new System.Windows.Forms.Padding(2);
+            this.contPost.Name = "contPost";
+            this.contPost.Size = new System.Drawing.Size(96, 20);
+            this.contPost.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(126, 99);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Content";
+            // 
+            // notifRadio
+            // 
+            this.notifRadio.AutoSize = true;
+            this.notifRadio.Location = new System.Drawing.Point(14, 160);
+            this.notifRadio.Name = "notifRadio";
+            this.notifRadio.Size = new System.Drawing.Size(78, 17);
+            this.notifRadio.TabIndex = 10;
+            this.notifRadio.TabStop = true;
+            this.notifRadio.Text = "Notification";
+            this.notifRadio.UseVisualStyleBackColor = true;
+            // 
+            // recRadio
+            // 
+            this.recRadio.AutoSize = true;
+            this.recRadio.Location = new System.Drawing.Point(14, 137);
+            this.recRadio.Name = "recRadio";
+            this.recRadio.Size = new System.Drawing.Size(60, 17);
+            this.recRadio.TabIndex = 9;
+            this.recRadio.TabStop = true;
+            this.recRadio.Text = "Record";
+            this.recRadio.UseVisualStyleBackColor = true;
+            // 
+            // contRadio
+            // 
+            this.contRadio.AutoSize = true;
+            this.contRadio.Location = new System.Drawing.Point(14, 114);
+            this.contRadio.Name = "contRadio";
+            this.contRadio.Size = new System.Drawing.Size(70, 17);
+            this.contRadio.TabIndex = 8;
+            this.contRadio.TabStop = true;
+            this.contRadio.Text = "Container";
+            this.contRadio.UseVisualStyleBackColor = true;
+            // 
+            // appRadio
+            // 
+            this.appRadio.AutoSize = true;
+            this.appRadio.Location = new System.Drawing.Point(14, 91);
+            this.appRadio.Name = "appRadio";
+            this.appRadio.Size = new System.Drawing.Size(77, 17);
+            this.appRadio.TabIndex = 7;
+            this.appRadio.TabStop = true;
+            this.appRadio.Text = "Application";
+            this.appRadio.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 189);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(11, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Parent ID:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(80, 141);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(96, 20);
-            this.textBox4.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(80, 98);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 20);
-            this.textBox3.TabIndex = 4;
+            this.label3.Text = "Type:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 145);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(8, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Type:";
+            this.label2.Size = new System.Drawing.Size(166, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Path where to insert the resource:";
+            // 
+            // namePost
+            // 
+            this.namePost.Location = new System.Drawing.Point(184, 73);
+            this.namePost.Margin = new System.Windows.Forms.Padding(2);
+            this.namePost.Name = "namePost";
+            this.namePost.Size = new System.Drawing.Size(96, 20);
+            this.namePost.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 98);
+            this.label1.Location = new System.Drawing.Point(126, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -265,25 +365,28 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(502, 28);
+            this.button2.Location = new System.Drawing.Point(14, 199);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 24);
             this.button2.TabIndex = 1;
             this.button2.Text = "SEND";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // urlPost
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 25);
-            this.textBox1.TabIndex = 0;
+            this.urlPost.Location = new System.Drawing.Point(11, 31);
+            this.urlPost.Margin = new System.Windows.Forms.Padding(2);
+            this.urlPost.Multiline = true;
+            this.urlPost.Name = "urlPost";
+            this.urlPost.Size = new System.Drawing.Size(463, 25);
+            this.urlPost.TabIndex = 0;
+            this.urlPost.Text = "/api/somiod/";
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.namePut);
             this.tabPage3.Controls.Add(this.contButton);
             this.tabPage3.Controls.Add(this.appButton);
@@ -297,6 +400,80 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "PUT";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Type:";
+            // 
+            // namePut
+            // 
+            this.namePut.Location = new System.Drawing.Point(156, 61);
+            this.namePut.Name = "namePut";
+            this.namePut.Size = new System.Drawing.Size(100, 20);
+            this.namePut.TabIndex = 6;
+            // 
+            // contButton
+            // 
+            this.contButton.AutoSize = true;
+            this.contButton.Location = new System.Drawing.Point(11, 103);
+            this.contButton.Name = "contButton";
+            this.contButton.Size = new System.Drawing.Size(70, 17);
+            this.contButton.TabIndex = 5;
+            this.contButton.TabStop = true;
+            this.contButton.Text = "Container";
+            this.contButton.UseVisualStyleBackColor = true;
+            // 
+            // appButton
+            // 
+            this.appButton.AutoSize = true;
+            this.appButton.Location = new System.Drawing.Point(11, 80);
+            this.appButton.Name = "appButton";
+            this.appButton.Size = new System.Drawing.Size(77, 17);
+            this.appButton.TabIndex = 4;
+            this.appButton.TabStop = true;
+            this.appButton.Text = "Application";
+            this.appButton.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(112, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Name:";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 154);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 24);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Modify";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // urlPut
+            // 
+            this.urlPut.Location = new System.Drawing.Point(11, 27);
+            this.urlPut.Name = "urlPut";
+            this.urlPut.Size = new System.Drawing.Size(249, 20);
+            this.urlPut.TabIndex = 1;
+            this.urlPut.Text = "/api/somiod/";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(329, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Resource to update (only supported for applications and containers):";
             // 
             // tabPage4
             // 
@@ -339,7 +516,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Insert the part of the endpoint that maps the resource (example: /api/somiod/app)" +
     "";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -349,7 +525,6 @@
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Path to Resouce:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tabPage5
             // 
@@ -429,70 +604,14 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "URL:";
             // 
-            // label10
+            // enaPost
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 4);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(329, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Resource to update (only supported for applications and containers):";
-            // 
-            // urlPut
-            // 
-            this.urlPut.Location = new System.Drawing.Point(12, 20);
-            this.urlPut.Name = "urlPut";
-            this.urlPut.Size = new System.Drawing.Size(249, 20);
-            this.urlPut.TabIndex = 1;
-            this.urlPut.Text = "/api/somiod/";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(7, 122);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Modify";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Name:";
-            // 
-            // appButton
-            // 
-            this.appButton.AutoSize = true;
-            this.appButton.Location = new System.Drawing.Point(12, 47);
-            this.appButton.Name = "appButton";
-            this.appButton.Size = new System.Drawing.Size(77, 17);
-            this.appButton.TabIndex = 4;
-            this.appButton.TabStop = true;
-            this.appButton.Text = "Application";
-            this.appButton.UseVisualStyleBackColor = true;
-            // 
-            // contButton
-            // 
-            this.contButton.AutoSize = true;
-            this.contButton.Location = new System.Drawing.Point(12, 70);
-            this.contButton.Name = "contButton";
-            this.contButton.Size = new System.Drawing.Size(70, 17);
-            this.contButton.TabIndex = 5;
-            this.contButton.TabStop = true;
-            this.contButton.Text = "Container";
-            this.contButton.UseVisualStyleBackColor = true;
-            // 
-            // namePut
-            // 
-            this.namePut.Location = new System.Drawing.Point(54, 96);
-            this.namePut.Name = "namePut";
-            this.namePut.Size = new System.Drawing.Size(100, 20);
-            this.namePut.TabIndex = 6;
+            this.enaPost.AutoSize = true;
+            this.enaPost.Location = new System.Drawing.Point(184, 171);
+            this.enaPost.Name = "enaPost";
+            this.enaPost.Size = new System.Drawing.Size(15, 14);
+            this.enaPost.TabIndex = 18;
+            this.enaPost.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -524,16 +643,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox namePost;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox urlPost;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
@@ -560,6 +674,21 @@
         private System.Windows.Forms.TextBox namePut;
         private System.Windows.Forms.RadioButton contButton;
         private System.Windows.Forms.RadioButton appButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton notifRadio;
+        private System.Windows.Forms.RadioButton recRadio;
+        private System.Windows.Forms.RadioButton contRadio;
+        private System.Windows.Forms.RadioButton appRadio;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox evPost;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox endPost;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox contPost;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox enaPost;
     }
 }
 

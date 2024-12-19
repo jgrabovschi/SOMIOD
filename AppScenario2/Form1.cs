@@ -34,11 +34,6 @@ namespace AppScenario2
             client = new RestClient(baseURI);
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             List<Application> list = new List<Application>();
@@ -207,16 +202,6 @@ namespace AppScenario2
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(deletePath.Text))
@@ -354,6 +339,87 @@ namespace AppScenario2
                 else
                 {
                     MessageBox.Show("Resource not found or an error occurred.\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var resource_type = "";
+
+            if (appRadio.Checked)
+            {
+                resource_type = "application";
+            }
+            else if (contRadio.Checked)
+            {
+                resource_type = "container";
+            }
+            else if (recRadio.Checked)
+            {
+                resource_type = "record";
+            }
+            else if (notifRadio.Checked)
+            {
+                resource_type = "notification";
+            }
+            else
+            {
+                MessageBox.Show("Please select a resource type.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(urlPost.Text))
+            {
+                MessageBox.Show("URL cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            XmlDocument doc = new XmlDocument();
+
+            XmlElement root = doc.CreateElement(char.ToUpper(resource_type[0]) + resource_type.Substring(1));
+            
+            XmlElement nameElement = doc.CreateElement("name");
+            nameElement.InnerText = namePost.Text;
+
+            XmlElement contElement = doc.CreateElement("content");
+            contElement.InnerText = contPost.Text;
+
+            XmlElement endElement = doc.CreateElement("endpoint");
+            endElement.InnerText = endPost.Text;
+
+            XmlElement evElement = doc.CreateElement("event");
+            evElement.InnerText = evPost.Text;
+
+            XmlElement enaElement = doc.CreateElement("enabled");
+            enaElement.InnerText = enaPost.Checked.ToString().ToLower();
+
+            root.AppendChild(nameElement);
+            root.AppendChild(contElement);
+            root.AppendChild(endElement);
+            root.AppendChild(evElement);
+            root.AppendChild(enaElement);
+
+            var request = new RestRequest(urlPost.Text, Method.Post);
+
+            request.AddHeader("Content-Type", "application/xml");
+            request.AddHeader("res-type", resource_type);
+            request.AddBody(root.OuterXml);
+
+            try
+            {
+                var response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Resource created successfully.\n");
+                }
+                else
+                {
+                    MessageBox.Show($"Resource not found or an error occurred.\n");
                 }
             }
             catch (Exception ex)
