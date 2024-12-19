@@ -14,6 +14,7 @@ using RestSharp;
 using RestSharp.Serializers;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using System.Web.UI.WebControls;
 
 namespace AppScenario2
 {
@@ -313,6 +314,52 @@ namespace AppScenario2
             }
 
             MessageBox.Show("Disconnected from the MQTT broker.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(urlPut.Text))
+            {
+                MessageBox.Show("URL cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(namePut.Text))
+            {
+                MessageBox.Show("Name cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            XmlDocument doc = new XmlDocument();
+
+            XmlElement nameElement = doc.CreateElement("name");
+            nameElement.InnerText = namePut.Text;
+            XmlElement root = doc.CreateElement(appButton.Checked ? "Application" : "Container");
+
+            root.AppendChild(nameElement);
+
+            var putRequest = new RestRequest(urlPut.Text, Method.Put);
+            putRequest.AddBody(root.OuterXml);
+            putRequest.AddHeader("Content-Type", "application/xml");
+            putRequest.AddHeader("res-type", appButton.Checked ? "application" : "container");
+
+            try
+            {
+                var response = client.Execute(putRequest);
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Resource updated successfully.\n");
+                }
+                else
+                {
+                    MessageBox.Show("Resource not found or an error occurred.\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

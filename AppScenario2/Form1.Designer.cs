@@ -49,21 +49,29 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.deletePath = new System.Windows.Forms.TextBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.subscribeButton = new System.Windows.Forms.Button();
-            this.urlText = new System.Windows.Forms.TextBox();
-            this.topicText = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.unsubButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.topicText = new System.Windows.Forms.TextBox();
+            this.urlText = new System.Windows.Forms.TextBox();
+            this.subscribeButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.urlPut = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.appButton = new System.Windows.Forms.RadioButton();
+            this.contButton = new System.Windows.Forms.RadioButton();
+            this.namePut = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
@@ -276,6 +284,13 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.namePut);
+            this.tabPage3.Controls.Add(this.contButton);
+            this.tabPage3.Controls.Add(this.appButton);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.urlPut);
+            this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(650, 340);
@@ -297,15 +312,23 @@
             this.tabPage4.Text = "DELETE";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // deletePath
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Path to Resouce:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.deletePath.Location = new System.Drawing.Point(105, 25);
+            this.deletePath.Name = "deletePath";
+            this.deletePath.Size = new System.Drawing.Size(294, 20);
+            this.deletePath.TabIndex = 3;
+            this.deletePath.Text = "/api/somiod/";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(11, 41);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // label6
             // 
@@ -318,22 +341,15 @@
     "";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // deleteButton
+            // label5
             // 
-            this.deleteButton.Location = new System.Drawing.Point(11, 41);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // deletePath
-            // 
-            this.deletePath.Location = new System.Drawing.Point(105, 25);
-            this.deletePath.Name = "deletePath";
-            this.deletePath.Size = new System.Drawing.Size(294, 20);
-            this.deletePath.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Path to Resouce:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tabPage5
             // 
@@ -351,23 +367,39 @@
             this.tabPage5.Text = "MQTT Broker";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // unsubButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 8);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "URL:";
+            this.unsubButton.Location = new System.Drawing.Point(172, 30);
+            this.unsubButton.Name = "unsubButton";
+            this.unsubButton.Size = new System.Drawing.Size(75, 23);
+            this.unsubButton.TabIndex = 6;
+            this.unsubButton.Text = "Unsubscribe";
+            this.unsubButton.UseVisualStyleBackColor = true;
+            this.unsubButton.Click += new System.EventHandler(this.button6_Click);
             // 
-            // label8
+            // label9
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Topic:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(262, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Messages will pop when a new notification is received";
+            // 
+            // topicText
+            // 
+            this.topicText.Location = new System.Drawing.Point(47, 27);
+            this.topicText.Name = "topicText";
+            this.topicText.Size = new System.Drawing.Size(119, 20);
+            this.topicText.TabIndex = 4;
+            // 
+            // urlText
+            // 
+            this.urlText.Location = new System.Drawing.Point(47, 1);
+            this.urlText.Name = "urlText";
+            this.urlText.Size = new System.Drawing.Size(119, 20);
+            this.urlText.TabIndex = 3;
+            this.urlText.Text = "test.mosquitto.org";
             // 
             // subscribeButton
             // 
@@ -379,39 +411,88 @@
             this.subscribeButton.UseVisualStyleBackColor = true;
             this.subscribeButton.Click += new System.EventHandler(this.subscribeButton_Click);
             // 
-            // urlText
+            // label8
             // 
-            this.urlText.Location = new System.Drawing.Point(47, 1);
-            this.urlText.Name = "urlText";
-            this.urlText.Size = new System.Drawing.Size(119, 20);
-            this.urlText.TabIndex = 3;
-            this.urlText.Text = "test.mosquitto.org";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Topic:";
             // 
-            // topicText
+            // label7
             // 
-            this.topicText.Location = new System.Drawing.Point(47, 27);
-            this.topicText.Name = "topicText";
-            this.topicText.Size = new System.Drawing.Size(119, 20);
-            this.topicText.TabIndex = 4;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "URL:";
             // 
-            // label9
+            // label10
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(262, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Messages will pop when a new notification is received";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(329, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Resource to update (only supported for applications and containers):";
             // 
-            // unsubButton
+            // urlPut
             // 
-            this.unsubButton.Location = new System.Drawing.Point(172, 30);
-            this.unsubButton.Name = "unsubButton";
-            this.unsubButton.Size = new System.Drawing.Size(75, 23);
-            this.unsubButton.TabIndex = 6;
-            this.unsubButton.Text = "Unsubscribe";
-            this.unsubButton.UseVisualStyleBackColor = true;
-            this.unsubButton.Click += new System.EventHandler(this.button6_Click);
+            this.urlPut.Location = new System.Drawing.Point(12, 20);
+            this.urlPut.Name = "urlPut";
+            this.urlPut.Size = new System.Drawing.Size(249, 20);
+            this.urlPut.TabIndex = 1;
+            this.urlPut.Text = "/api/somiod/";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(7, 122);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Modify";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Name:";
+            // 
+            // appButton
+            // 
+            this.appButton.AutoSize = true;
+            this.appButton.Location = new System.Drawing.Point(12, 47);
+            this.appButton.Name = "appButton";
+            this.appButton.Size = new System.Drawing.Size(77, 17);
+            this.appButton.TabIndex = 4;
+            this.appButton.TabStop = true;
+            this.appButton.Text = "Application";
+            this.appButton.UseVisualStyleBackColor = true;
+            // 
+            // contButton
+            // 
+            this.contButton.AutoSize = true;
+            this.contButton.Location = new System.Drawing.Point(12, 70);
+            this.contButton.Name = "contButton";
+            this.contButton.Size = new System.Drawing.Size(70, 17);
+            this.contButton.TabIndex = 5;
+            this.contButton.TabStop = true;
+            this.contButton.Text = "Container";
+            this.contButton.UseVisualStyleBackColor = true;
+            // 
+            // namePut
+            // 
+            this.namePut.Location = new System.Drawing.Point(54, 96);
+            this.namePut.Name = "namePut";
+            this.namePut.Size = new System.Drawing.Size(100, 20);
+            this.namePut.TabIndex = 6;
             // 
             // Form1
             // 
@@ -427,6 +508,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -470,6 +553,13 @@
         private System.Windows.Forms.TextBox topicText;
         private System.Windows.Forms.Button unsubButton;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox urlPut;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox namePut;
+        private System.Windows.Forms.RadioButton contButton;
+        private System.Windows.Forms.RadioButton appButton;
     }
 }
 
