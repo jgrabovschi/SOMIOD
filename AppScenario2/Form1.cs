@@ -36,170 +36,56 @@ namespace AppScenario2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Application> list = new List<Application>();
+            var somiod_locate = "";
 
-            var request = new RestRequest("/api/SOMIOD/",Method.Get);
-            request.RequestFormat = DataFormat.Xml;
-            request.AddHeader("Accept", "application/xml");
-
-            try
+            if (string.IsNullOrEmpty(urlGet.Text))
             {
-                var response = client.Execute(request);
-                richTextBox1.Clear();
-                if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
-                {
-                    // Parse the XML content
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(response.Content);
-
-                    // Select all <Application> nodes
-                    XmlNodeList appNodes = xmlDoc.SelectNodes("//Application");
-
-                    if (appNodes != null && appNodes.Count > 0)
-                    {
-                        foreach (XmlNode node in appNodes)
-                        {
-                            string id = node.SelectSingleNode("Id")?.InnerText;
-                            string name = node.SelectSingleNode("Name")?.InnerText;
-                            string creationDate = node.SelectSingleNode("CreationDateTime")?.InnerText;
-
-                            // Append to the RichTextBox
-                            richTextBox1.AppendText($"Name: {name}\n");
-                            richTextBox1.AppendText($"Id: {id}\n");
-                            richTextBox1.AppendText($"Creation DateTime: {creationDate}\n");
-                            richTextBox1.AppendText("--------------------------\n");
-                        }
-                    }
-                }
-                else
-                {
-                    richTextBox1.AppendText("No data retrieved.\n");
-                }
-            }
-            catch (Exception ex)
-            {
-                richTextBox1.AppendText($"Error: {ex.Message}\n");
-            }
-
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            // Check if the input is null or empty
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("Name cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Stop further execution
-            }
-
-            // Create the REST request
-            var request = new RestRequest("/api/SOMIOD/{name}", Method.Get);
-            request.AddUrlSegment("name", textBox2.Text);
-            request.AddHeader("Accept", "application/xml");
-
-            try
-            {
-                var response = client.Execute(request);
-                richTextBox1.Clear();
-
-                // Check if the response is successful and has content
-                if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
-                {
-                    // Parse the XML content
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(response.Content);
-
-                    // Select the first <Application> node
-                    XmlNode appNode = xmlDoc.SelectSingleNode("//Application");
-
-                    if (appNode != null)
-                    {
-                        string id = appNode.SelectSingleNode("Id")?.InnerText;
-                        string name = appNode.SelectSingleNode("Name")?.InnerText;
-                        string creationDate = appNode.SelectSingleNode("CreationDateTime")?.InnerText;
-
-                        // Display in the RichTextBox
-                        richTextBox1.AppendText($"Name: {name}\n");
-                        richTextBox1.AppendText($"Id: {id}\n");
-                        richTextBox1.AppendText($"Creation DateTime: {creationDate}\n");
-                    }
-                    else
-                    {
-                        richTextBox1.AppendText("No application found.\n");
-                    }
-                }
-                else
-                {
-                    richTextBox1.AppendText("No data retrieved.\n");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Display error message
-                MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            // Check if the input is null or empty
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("Name cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("URL cannot be null or empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Create the REST request
-            var request = new RestRequest("/api/SOMIOD/{name}/", Method.Get);
-            request.AddUrlSegment("name", textBox2.Text);
+            if (appRadioGet.Checked)
+            {
+                somiod_locate = "application";
+            }
+            else if (contRadioGet.Checked)
+            {
+                somiod_locate = "container";
+            }
+            else if (recRadioGet.Checked)
+            {
+                somiod_locate = "record";
+            }
+            else if (notifRadioGet.Checked)
+            {
+                somiod_locate = "notification";
+            }
+
+            var request = new RestRequest(urlGet.Text, Method.Get);
             request.AddHeader("Accept", "application/xml");
-            request.AddHeader("somiod-locate", "true"); // Custom header for locating containers
+            if (somiod_locate != "")
+            {
+                request.AddHeader("somiod-locate", somiod_locate);
+            }
 
             try
             {
                 var response = client.Execute(request);
-                richTextBox1.Clear();
-
-                if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
+                if (response.IsSuccessful)
                 {
-                    // Parse the XML response
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(response.Content);
-
-                    // Search for 'Container' nodes inside the response
-                    XmlNodeList containerNodes = xmlDoc.SelectNodes("//Container");
-
-                    if (containerNodes != null && containerNodes.Count > 0)
-                    {
-                        foreach (XmlNode container in containerNodes)
-                        {
-                            string id = container.SelectSingleNode("Id")?.InnerText;
-                            string name = container.SelectSingleNode("Name")?.InnerText;
-                            string creationDate = container.SelectSingleNode("CreationDateTime")?.InnerText;
-
-                            // Append container details to the RichTextBox
-                            richTextBox1.AppendText($"Container Name: {name}\n");
-                            richTextBox1.AppendText($"Container Id: {id}\n");
-                            richTextBox1.AppendText($"Creation DateTime: {creationDate}\n");
-                            richTextBox1.AppendText("--------------------------\n");
-                        }
-                    }
-                    else
-                    {
-                        richTextBox1.AppendText("No containers found inside the application.\n");
-                    }
+                    richTextBox1.Clear();
+                    richTextBox1.AppendText(response.Content);
                 }
                 else
                 {
-                    richTextBox1.AppendText("No data retrieved or an error occurred.\n");
+                    MessageBox.Show($"Resource not found or an error occurred. Code {response.StatusCode}\n");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -221,7 +107,7 @@ namespace AppScenario2
                 }
                 else
                 {
-                    MessageBox.Show("Resource not found or an error occurred.\n");
+                    MessageBox.Show($"Resource not found or an error occurred. Code {response.StatusCode}\n");
                 }
             }
             catch (Exception ex)
@@ -338,7 +224,7 @@ namespace AppScenario2
                 }
                 else
                 {
-                    MessageBox.Show("Resource not found or an error occurred.\n");
+                    MessageBox.Show($"Resource not found or an error occurred. Code {response.StatusCode}\n");
                 }
             }
             catch (Exception ex)
@@ -419,7 +305,7 @@ namespace AppScenario2
                 }
                 else
                 {
-                    MessageBox.Show($"Resource not found or an error occurred.\n");
+                    MessageBox.Show($"Resource not found or an error occurred. Code {response.StatusCode}\n");
                 }
             }
             catch (Exception ex)
