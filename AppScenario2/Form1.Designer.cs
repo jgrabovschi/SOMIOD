@@ -30,9 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.notifRadioGet = new System.Windows.Forms.RadioButton();
+            this.recRadioGet = new System.Windows.Forms.RadioButton();
+            this.contRadioGet = new System.Windows.Forms.RadioButton();
+            this.appRadioGet = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.urlGet = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.getButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.enaPost = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.evPost = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -72,14 +80,7 @@
             this.subscribeButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.enaPost = new System.Windows.Forms.CheckBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.urlGet = new System.Windows.Forms.TextBox();
-            this.notifRadioGet = new System.Windows.Forms.RadioButton();
-            this.recRadioGet = new System.Windows.Forms.RadioButton();
-            this.contRadioGet = new System.Windows.Forms.RadioButton();
-            this.appRadioGet = new System.Windows.Forms.RadioButton();
-            this.label18 = new System.Windows.Forms.Label();
+            this.cleatButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cleatButton);
             this.tabPage1.Controls.Add(this.notifRadioGet);
             this.tabPage1.Controls.Add(this.recRadioGet);
             this.tabPage1.Controls.Add(this.contRadioGet);
@@ -122,6 +124,78 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GET";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // notifRadioGet
+            // 
+            this.notifRadioGet.AutoSize = true;
+            this.notifRadioGet.Location = new System.Drawing.Point(19, 141);
+            this.notifRadioGet.Name = "notifRadioGet";
+            this.notifRadioGet.Size = new System.Drawing.Size(78, 17);
+            this.notifRadioGet.TabIndex = 15;
+            this.notifRadioGet.TabStop = true;
+            this.notifRadioGet.Text = "Notification";
+            this.notifRadioGet.UseVisualStyleBackColor = true;
+            // 
+            // recRadioGet
+            // 
+            this.recRadioGet.AutoSize = true;
+            this.recRadioGet.Location = new System.Drawing.Point(19, 118);
+            this.recRadioGet.Name = "recRadioGet";
+            this.recRadioGet.Size = new System.Drawing.Size(60, 17);
+            this.recRadioGet.TabIndex = 14;
+            this.recRadioGet.TabStop = true;
+            this.recRadioGet.Text = "Record";
+            this.recRadioGet.UseVisualStyleBackColor = true;
+            // 
+            // contRadioGet
+            // 
+            this.contRadioGet.AutoSize = true;
+            this.contRadioGet.Location = new System.Drawing.Point(19, 95);
+            this.contRadioGet.Name = "contRadioGet";
+            this.contRadioGet.Size = new System.Drawing.Size(70, 17);
+            this.contRadioGet.TabIndex = 13;
+            this.contRadioGet.TabStop = true;
+            this.contRadioGet.Text = "Container";
+            this.contRadioGet.UseVisualStyleBackColor = true;
+            // 
+            // appRadioGet
+            // 
+            this.appRadioGet.AutoSize = true;
+            this.appRadioGet.Location = new System.Drawing.Point(19, 72);
+            this.appRadioGet.Name = "appRadioGet";
+            this.appRadioGet.Size = new System.Drawing.Size(77, 17);
+            this.appRadioGet.TabIndex = 12;
+            this.appRadioGet.TabStop = true;
+            this.appRadioGet.Text = "Application";
+            this.appRadioGet.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(16, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Locate:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 2);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Path to resource:";
+            // 
+            // urlGet
+            // 
+            this.urlGet.Location = new System.Drawing.Point(11, 20);
+            this.urlGet.Margin = new System.Windows.Forms.Padding(2);
+            this.urlGet.Multiline = true;
+            this.urlGet.Name = "urlGet";
+            this.urlGet.Size = new System.Drawing.Size(242, 25);
+            this.urlGet.TabIndex = 8;
+            this.urlGet.Text = "/api/somiod/";
             // 
             // richTextBox1
             // 
@@ -172,6 +246,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "POST";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // enaPost
+            // 
+            this.enaPost.AutoSize = true;
+            this.enaPost.Location = new System.Drawing.Point(184, 171);
+            this.enaPost.Name = "enaPost";
+            this.enaPost.Size = new System.Drawing.Size(15, 14);
+            this.enaPost.TabIndex = 18;
+            this.enaPost.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -558,86 +641,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "URL:";
             // 
-            // enaPost
+            // cleatButton
             // 
-            this.enaPost.AutoSize = true;
-            this.enaPost.Location = new System.Drawing.Point(184, 171);
-            this.enaPost.Name = "enaPost";
-            this.enaPost.Size = new System.Drawing.Size(15, 14);
-            this.enaPost.TabIndex = 18;
-            this.enaPost.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 2);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Path to resource:";
-            // 
-            // urlGet
-            // 
-            this.urlGet.Location = new System.Drawing.Point(11, 20);
-            this.urlGet.Margin = new System.Windows.Forms.Padding(2);
-            this.urlGet.Multiline = true;
-            this.urlGet.Name = "urlGet";
-            this.urlGet.Size = new System.Drawing.Size(242, 25);
-            this.urlGet.TabIndex = 8;
-            this.urlGet.Text = "/api/somiod/";
-            // 
-            // notifRadioGet
-            // 
-            this.notifRadioGet.AutoSize = true;
-            this.notifRadioGet.Location = new System.Drawing.Point(19, 141);
-            this.notifRadioGet.Name = "notifRadioGet";
-            this.notifRadioGet.Size = new System.Drawing.Size(78, 17);
-            this.notifRadioGet.TabIndex = 15;
-            this.notifRadioGet.TabStop = true;
-            this.notifRadioGet.Text = "Notification";
-            this.notifRadioGet.UseVisualStyleBackColor = true;
-            // 
-            // recRadioGet
-            // 
-            this.recRadioGet.AutoSize = true;
-            this.recRadioGet.Location = new System.Drawing.Point(19, 118);
-            this.recRadioGet.Name = "recRadioGet";
-            this.recRadioGet.Size = new System.Drawing.Size(60, 17);
-            this.recRadioGet.TabIndex = 14;
-            this.recRadioGet.TabStop = true;
-            this.recRadioGet.Text = "Record";
-            this.recRadioGet.UseVisualStyleBackColor = true;
-            // 
-            // contRadioGet
-            // 
-            this.contRadioGet.AutoSize = true;
-            this.contRadioGet.Location = new System.Drawing.Point(19, 95);
-            this.contRadioGet.Name = "contRadioGet";
-            this.contRadioGet.Size = new System.Drawing.Size(70, 17);
-            this.contRadioGet.TabIndex = 13;
-            this.contRadioGet.TabStop = true;
-            this.contRadioGet.Text = "Container";
-            this.contRadioGet.UseVisualStyleBackColor = true;
-            // 
-            // appRadioGet
-            // 
-            this.appRadioGet.AutoSize = true;
-            this.appRadioGet.Location = new System.Drawing.Point(19, 72);
-            this.appRadioGet.Name = "appRadioGet";
-            this.appRadioGet.Size = new System.Drawing.Size(77, 17);
-            this.appRadioGet.TabIndex = 12;
-            this.appRadioGet.TabStop = true;
-            this.appRadioGet.Text = "Application";
-            this.appRadioGet.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(16, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 13);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Locate:";
+            this.cleatButton.Location = new System.Drawing.Point(112, 163);
+            this.cleatButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cleatButton.Name = "cleatButton";
+            this.cleatButton.Size = new System.Drawing.Size(97, 23);
+            this.cleatButton.TabIndex = 16;
+            this.cleatButton.Text = "Clear";
+            this.cleatButton.UseVisualStyleBackColor = true;
+            this.cleatButton.Click += new System.EventHandler(this.cleatButton_Click);
             // 
             // Form1
             // 
@@ -717,6 +730,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox urlGet;
+        private System.Windows.Forms.Button cleatButton;
     }
 }
 

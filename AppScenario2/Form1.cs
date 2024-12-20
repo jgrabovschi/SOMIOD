@@ -313,5 +313,13 @@ namespace AppScenario2
                 MessageBox.Show($"Error: {ex.Message}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cleatButton_Click(object sender, EventArgs e)
+        {
+            appRadioGet.Checked = false;
+            contRadioGet.Checked = false;
+            recRadioGet.Checked = false;
+            notifRadioGet.Checked = false;
+        }
     }
 }
