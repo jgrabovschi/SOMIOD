@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOMIOD", "SOMIOD\SOMIOD.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppScenario2", "AppScenario2\AppScenario2.csproj", "{EDB692E6-0DB2-4F5A-9CB8-8A7952E8A86E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppB_switch", "..\..\..\AppB\AppB\AppB\AppB_switch.csproj", "{89A05FBE-1FD5-41EC-8577-CFD27A50848D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppB_switch", "AppB\AppB_switch.csproj", "{89A05FBE-1FD5-41EC-8577-CFD27A50848D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
