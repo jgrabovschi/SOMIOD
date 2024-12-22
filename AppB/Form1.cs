@@ -28,7 +28,7 @@ namespace AppB
             };
 
             var request = new RestRequest("api/somiod", Method.Post);
-            request.RequestFormat = DataFormat.Json;
+            request.RequestFormat = DataFormat.Xml;
             request.AddObject(switchLight);
 
             var response = client.Execute(request);
@@ -52,7 +52,7 @@ namespace AppB
             // Create the REST request
             var request = new RestRequest("api/somiod/Lighting/light_bulb/record", Method.Post);
             request.AddHeader("res-type", "record"); // Add the required header
-            request.RequestFormat = DataFormat.Json;
+            request.RequestFormat = DataFormat.Xml;
 
             // Correct Record object initialization
             var record = new Record
@@ -62,7 +62,7 @@ namespace AppB
             };
 
             // Add the Record object to the request body
-            request.AddJsonBody(record);
+            request.AddXmlBody(record);
 
             try
             {
@@ -93,7 +93,7 @@ namespace AppB
             // Create the REST request
             var request = new RestRequest("api/somiod/Lighting/light_bulb/record", Method.Post);
             request.AddHeader("res-type", "record"); // Add the required header
-            request.RequestFormat = DataFormat.Json;
+            request.RequestFormat = DataFormat.Xml;
 
             // Correct Record object initialization
             var record = new Record
@@ -103,18 +103,14 @@ namespace AppB
             };
 
             // Add the Record object to the request body
-            request.AddJsonBody(record);
+            request.AddXmlBody(record);
 
             try
             {
                 // Execute the request
                 var response = client.Execute(request);
 
-                if (response.IsSuccessful)
-                {
-                    MessageBox.Show("Record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (!(response.IsSuccessful))
                 {
                     MessageBox.Show($"Error: {response.StatusCode} - {response.Content}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

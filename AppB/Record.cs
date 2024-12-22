@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppB
 {
-    internal class Record
+    public class Record
     {
         public string name { get; set; }
         public string content { get; set; }
