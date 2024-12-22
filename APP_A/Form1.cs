@@ -26,50 +26,43 @@ namespace APP_A
         {
             InitializeComponent();
             RestClient client = new RestClient(baseURL);
-            RestRequest request = new RestRequest("api/somiod/Lighting/light_bulb/notification/bulb_status", Method.Get);
-            request.AddHeader("Content-Type", "application/xml");
 
             try
             {
-                var response = client.Execute(request);
+                RestRequest request_application = new RestRequest("api/somiod/Lighting", Method.Get);
+                request_application.AddHeader("Accept", "application/xml");
+                var response = client.Execute(request_application);
                 if (!response.IsSuccessful)
                 {
-                    RestRequest createNotificationRequest = new RestRequest("api/somiod/Lighting/light_bulb/notification", Method.Post);
-                    createNotificationRequest.AddHeader("res-type", "notification");
-                    createNotificationRequest.RequestFormat = DataFormat.Xml;
+                    RestRequest request = new RestRequest("api/somiod", Method.Post);
+                    request.AddHeader("res-type", "application");
+                    request.RequestFormat = DataFormat.Xml;
                     XmlDocument doc = new XmlDocument();
-                    XmlElement notification = doc.CreateElement("Notification");
+                    XmlElement application = doc.CreateElement("Application");
                     XmlElement name = doc.CreateElement("name");
-                    name.InnerText = "bulb_status";
-                    XmlElement endpoint = doc.CreateElement("endpoint");
-                    endpoint.InnerText = "mqtt://broker.hivemq.com";
-                    XmlElement @event = doc.CreateElement("event");
-                    @event.InnerText = "0";
-                    XmlElement enabled = doc.CreateElement("enabled");
-                    enabled.InnerText = "true";
-                    notification.AppendChild(name);
-                    notification.AppendChild(endpoint);
-                    notification.AppendChild(@event);
-                    notification.AppendChild(enabled);
-                    createNotificationRequest.AddParameter("application/xml", notification.OuterXml, ParameterType.RequestBody);
-
+                    name.InnerText = "Lighting";
+                    application.AppendChild(name);
+                    doc.AppendChild(application);
+                    request.AddParameter("application/xml", doc.InnerXml, ParameterType.RequestBody);
                     try
                     {
-                      client.Execute(createNotificationRequest);
+                        client.Execute(request);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Form1.ActiveForm.Close();
+                        throw;
                     }
                 }
-
+                VerifyContainer(client);
+                VerifyNotification(client);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Form1.ActiveForm.Close();
             }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,6 +98,79 @@ namespace APP_A
 
         }
 
+        private void VerifyContainer(RestClient client)
+        {
+            RestRequest request_container = new RestRequest("api/somiod/Lighting/light_bulb", Method.Get);
+            request_container.AddHeader("Accept", "application/xml");
+            var response_container = client.Execute(request_container);
+            if (!response_container.IsSuccessful)
+            {
+                RestRequest request_create_container = new RestRequest("api/somiod/Lighting", Method.Post);
+                request_create_container.AddHeader("res-type", "container");
+                request_create_container.RequestFormat = DataFormat.Xml;
+                XmlDocument doc = new XmlDocument();
+                XmlElement container = doc.CreateElement("Container");
+                XmlElement name = doc.CreateElement("name");
+                name.InnerText = "light_bulb";
+                container.AppendChild(name);
+                doc.AppendChild(container);
+                request_create_container.AddParameter("application/xml", doc.InnerXml, ParameterType.RequestBody);
+                try
+                {
+                    client.Execute(request_create_container);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Form1.ActiveForm.Close();
+                }
+            }
+        }
+        private void VerifyNotification(RestClient client)
+        {
+            RestRequest request = new RestRequest("api/somiod/Lighting/light_bulb/notification/bulb_status", Method.Get);
+            request.AddHeader("Accept", "application/xml");
+            try
+            {
+                var response = client.Execute(request);
+                if (!response.IsSuccessful)
+                {
+                    RestRequest createNotificationRequest = new RestRequest("api/somiod/Lighting/light_bulb/notification", Method.Post);
+                    createNotificationRequest.AddHeader("res-type", "notification");
+                    createNotificationRequest.RequestFormat = DataFormat.Xml;
+                    XmlDocument doc = new XmlDocument();
+                    XmlElement notification = doc.CreateElement("Notification");
+                    XmlElement name = doc.CreateElement("name");
+                    name.InnerText = "bulb_status";
+                    XmlElement endpoint = doc.CreateElement("endpoint");
+                    endpoint.InnerText = "mqtt://broker.hivemq.com";
+                    XmlElement @event = doc.CreateElement("event");
+                    @event.InnerText = "0";
+                    XmlElement enabled = doc.CreateElement("enabled");
+                    enabled.InnerText = "true";
+                    notification.AppendChild(name);
+                    notification.AppendChild(endpoint);
+                    notification.AppendChild(@event);
+                    notification.AppendChild(enabled);
+                    createNotificationRequest.AddParameter("application/xml", notification.OuterXml, ParameterType.RequestBody);
+                    try
+                    {
+                        client.Execute(createNotificationRequest);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Form1.ActiveForm.Close();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Form1.ActiveForm.Close();
+            }
+        }
 
        private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
