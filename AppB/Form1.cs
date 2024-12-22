@@ -69,11 +69,7 @@ namespace AppB
                 // Execute the request
                 var response = client.Execute(request);
 
-                if (response.IsSuccessful)
-                {
-                    MessageBox.Show("Record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (!response.IsSuccessful)
                 {
                     MessageBox.Show($"Error: {response.StatusCode} - {response.Content}", "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
